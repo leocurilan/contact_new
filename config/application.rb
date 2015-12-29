@@ -23,8 +23,10 @@ module Contactnew
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+     config.assets.version = '1.0'
      config.before_configuration do
      env_file = File.join(Rails.root, 'config', 'local_env.yml')
      YAML.load(File.open(env_file)).each do |key, value|

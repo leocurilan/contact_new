@@ -77,8 +77,16 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  Rails.application.routes.default_url_options[:host] = 'yoursite.herokuapp.com'
-config.action_mailer.default_url_options = { :host => 'yoursite.herokuapp.com' }
+# new parameters
+config.cache_classes = true
+config.serve_static_assets = true
+config.assets.compile = true
+config.assets.digest = true
+
+Bundler.require(*Rails.groups(assets: %w(development test production)))
+
+  Rails.application.routes.default_url_options[:host] = 'contactnew.herokuapp.com'
+config.action_mailer.default_url_options = { :host => 'contactnew..herokuapp.com' }
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
