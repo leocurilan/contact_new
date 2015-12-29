@@ -1,0 +1,27 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+  <title>Contactnew</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html> -->
+
+
+doctype 5
+html
+  head
+    title Mysite
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    = render "partial/flash" unless flash.empty?
+    = yield
